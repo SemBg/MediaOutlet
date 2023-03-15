@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('articles');
 });
+
+Route::get('/create-story', function () {
+  return view('stories.create');
+});
+
+Route::post('/save-story', [StoriesController::class, 'draft']);
+Route::post('/submit-story', [StoriesController::class, 'submit']);
