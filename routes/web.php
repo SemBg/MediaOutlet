@@ -24,3 +24,12 @@ Route::get('/create-story', function () {
 
 Route::post('/save-story', [StoriesController::class, 'draft']);
 Route::post('/submit-story', [StoriesController::class, 'submit']);
+Route::post('/resubmit-story/{story}', [StoriesController::class, 'resubmit']);
+
+Route::get('/submitted-stories', [StoriesController::class, 'get']);
+Route::get('/submitted-story/{story}', [StoriesController::class, 'story']);
+Route::get('/submitted-story/{story}/approve', [StoriesController::class, 'approve']);
+Route::get('/submitted-story/{story}/deny', [StoriesController::class, 'deny']);
+
+Route::get('/rejected-stories', [StoriesController::class, 'getRejected']);
+Route::get('/rejected-story/{story}', [StoriesController::class, 'rejectedStory']);
