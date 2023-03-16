@@ -39,7 +39,7 @@
 					Save Draft
 				</button>
 
-				<a href="/" class="ml-4 text-black"> Back </a>
+				<a href="{{ url()->previous() }}" class="ml-4 text-black"> Back </a>
 			</div>
 		</form>
 	</x-card>
